@@ -1,0 +1,44 @@
+\chapter{Lecture 12}
+
+\section{Law of the unconscious statistician}
+
+\begin{framed}
+   \textbf{Theorem}:
+   \[
+      E[g(x)] = \sum_{x} g(x) P(X = x)
+   \] 
+\end{framed}
+
+\section{Variance}
+\begin{framed}
+   \textbf{Definition}: Variance of $X$ is 
+   \[
+      Var(X) = E \left[ \left( X - E[X] \right)^2 \right]
+   \] 
+   \[
+      Var(X) = E [ X^2] - E[X]^2
+   \] 
+
+   Standard deviation of $X$ is
+   \[
+     SD(X) = \sqrt{Var(X)}
+   \] 
+
+   \textbf{Proof}
+   \begin{align*}
+      Var(X) &=  \left[ \left( X - E[X] \right)^2 \right] \\
+             &= E[X^2 - 2 \mu X + \mu^2] \\
+             &= E[X^2] + E[-2\mu X] +  E[\mu^2]\\
+             &= E[X^2] - 2\mu E[X] + \mu^2 \\
+             &= E[X^2] - \mu^2
+   \end{align*}
+
+   \textbf{Properties}
+   \begin{itemize}
+      \item $Var(X) \geq 0$
+      \item $Var(X + c) = Var(X)$
+      \item $Var(cX ) = c^2Var(X)$
+      \item $Var(X +Y) = Var(X) + Var(Y)$
+   \end{itemize}
+\end{framed}
+

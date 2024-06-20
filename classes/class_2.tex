@@ -1,0 +1,97 @@
+\chapter{Class 2}
+
+\section{Counting}
+
+\subsection{Multiplication rule}
+\begin{framed}
+   Consider compound experiment, consisting of $2$ sub-experiments. Experiment 1 has $n$ outcomes, experiment 2 as $n$ outcomes. Then the compound experiment has $mn$ outcomes
+\end{framed}
+
+\subsection{Sampling with / without replacement}
+
+Sampling $k$ from $n$ with replacement
+\[
+  n^k
+\] 
+
+Sampling $k$ from $n$ without replacement
+\[
+  \frac{n!}{(n-k)!}
+\] 
+
+\subsection{Birthday Paradox}
+
+The probability of having a birthday match is
+\begin{align*}
+   P(\text{birthday match}) &= \frac{\text{Number of outcomes that match}}{ \text{Number of total outcomes}} \\
+                            &= 1 - \frac{ \text{ Number of outcomes without match}}{ \text{Number of total outcomes}} \\
+                            &= 1 - \frac{365!}{(365 - k)! 365^k}
+\end{align*}
+
+
+\subsection{Binomial coefficients}
+The number of ways to choose $k$ out of $n$ can be counted by
+\begin{enumerate}
+   \item multiplication rule 
+      \[
+        n \times n -1 \times \hdots \times (n - k+1) = \frac{n!}{(n-k)!}
+      \] 
+   \item adjust for overcounting (account for $k!$ reorderings)
+      \[
+         \frac{1}{k!} \frac{n!}{(n-k)!} = \frac{n!}{k!(n-k)!}
+      \] 
+\end{enumerate}
+More generally, 
+\[
+  \begin{pmatrix} n \\ k \end{pmatrix}  = \frac{n (n-1) \hdots (n - k + 1)}{k!} = \frac{n!}{k! (n-k)!}
+\] 
+
+\subsection{Example with Poker}
+
+Find the probability of a royal flush \\
+\[
+  P(\text{ Royal flush }) = \frac{4}{ \begin{pmatrix} 52 \\5 \end{pmatrix} } 
+\] 
+
+Find the probability of a flush
+\[
+  P(\text{ Flush }) =  \frac{4 \begin{pmatrix} 13 \\5 \end{pmatrix} }{ \begin{pmatrix} 52 \\5 \end{pmatrix} } \approx 0.002
+\] 
+
+Find the probability of a full house
+\[
+  P(\text{ Full house }) =  \begin{pmatrix} 13 \\2 \end{pmatrix}  \begin{pmatrix} 2 \\ 1 \end{pmatrix}  \begin{pmatrix} 4 \\3 \end{pmatrix}  \begin{pmatrix} 4 \\2 \end{pmatrix} \div \begin{pmatrix} 52 \\5  \end{pmatrix}  \approx 0.001
+\] 
+\section{A refined definition of probability}
+
+Previous definition: 
+\[
+   \mathbb{P}_{ \text{Naive}} \text{ is a function where} \left \{ \begin{array}{ll} 
+         \text{inputs} \\
+         \text{outputs}
+   \end{array} \right.
+\] 
+
+\begin{framed}
+   \textbf{Definition}\\
+
+   A \textbf{probability} space consists of
+   \begin{itemize}
+      \item Sample space $S$
+      \item Probability function $P$ 
+         \begin{itemize}
+            \item Input: any event $A \in S$
+            \item Output: real number $P(A) \in [0, 1]$
+         \end{itemize}
+   \end{itemize}
+
+   Axiomatic definitions of probability function
+   \begin{itemize}
+      \item $P(\emptyset) = 0$
+      \item $P(S) = 1$
+      \item For $A_1, A_2, \hdots$ disjoint, then
+         \[
+            P( \bigcup_{k=1}^{\infty}A_k) = \sum_{k = 1}^{\infty}P(A_k)
+         \] 
+   \end{itemize}
+\end{framed}

@@ -1,0 +1,124 @@
+\chapter{Class 1}
+
+\subsection{Set theory review}
+
+\begin{framed} 
+   \textbf{Definition}: A set is an unordered collection of unique items  \\
+
+   An element $x$ in set $A$ is denoted 
+    \[
+     x \in A
+   \] 
+
+   The \textbf{empty set} is the set without any elements, denoted
+   \[
+     \emptyset
+   \] 
+
+   $A$ is a \textbf{subset} of $B$ if every element of $A$ is also an element of $B$, denoted
+   \[
+     A \subseteq 
+   \] 
+
+   Note that
+   \[
+     \emptyset \subseteq A \text{ for any } A
+   \] 
+\end{framed}
+
+\begin{framed}
+   \textbf{Definition}: Operation of sets \\
+
+   The \textbf{union} of two sets is denoted
+   \[
+     A \cup B, x \in A \cup B \iff x \in A \text{ or } x \in B
+   \]
+
+   The \textbf{intersection} of two sets is denoted
+   \[
+     A \cap B, x \in A \cap B \iff x \in A \text{ and } x \in B
+   \]
+
+   The \textbf{complement} of a set is denoted
+   \[
+     A^C, x \in A^C  \iff x \notin A   \]
+\end{framed}
+
+
+\begin{framed}
+  
+
+\textbf{Operations of multiple sets}
+
+   \textbf{Unions}: 
+   \begin{align*}
+      \bigcup_{n = 1 }^{\infty} A_n &= A_1 \cup A_2 \cup \hdots \\
+                                    &= \{ x : x \in A_n \text{ for some positive integer $n$} \} 
+   \end{align*}
+
+   \textbf{Intersections}: 
+   \begin{align*}
+      \bigcap_{n = 1 }^{\infty} A_n &= A_1 \cap A_2 \cap \hdots \\
+                                    &= \{ x : x \in A_n \text{ for all positive integers $n$} \} 
+   \end{align*}
+\end{framed}
+
+\begin{framed}
+   \textbf{Disjoint}: $A$ and $B$ are disjoint if
+   \[
+     A \cap B = \emptyset
+   \] 
+
+   $A, B, C$ are disjoint if \[
+     A \cap B \cap C = \emptyset
+   \] 
+\end{framed}
+
+\subsection{De Morgan's Laws}
+\begin{framed}
+\textbf{De Morgan's Laws}
+
+De Morgan's Laws is the analogue of the distributive property in the contexts of sets. 
+
+\begin{align*}
+   & (A \cup B)^C = A^C \cap B^C \\
+   & (A \cap B)^C = A^C \cup B^C
+\end{align*}
+\end{framed}
+
+\subsection{Sample spaces}
+\begin{framed}
+
+ \textbf{Definition}:  \\
+ A sample space $S$ is the set of all possible outcomes\\ 
+
+ An event $A$  is a subset of $S$ (it can include $1$ or more possible outcomes) \\
+
+  
+\end{framed}
+
+\subsection{Naive definition of probability}
+
+\begin{framed}
+   \textbf{Definition}: 
+   \[
+      \mathbb{P}_{naive}(A) = \frac{|A|}{|S|} =  \frac{
+        \text{number of events in $A$}
+     }{
+        \text{number of events in $S$}
+     }
+   \] 
+   
+   Naive because this assumes
+   \begin{itemize}
+      \item each outcome is equally likely
+      \item finite number of possibilities
+   \end{itemize}
+\end{framed}
+
+
+
+
+
+
+

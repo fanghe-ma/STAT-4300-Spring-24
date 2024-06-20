@@ -1,0 +1,111 @@
+\chapter{Class 5}
+\section{Independence}
+
+ \begin{framed}
+    \textbf{Definition}: Two events are independent if 
+    \[
+      P(A \cap B) = P(A) \cdot P(B)
+    \] 
+
+    \textbf{Equivalent definitions}: if $P(A) > 0 $ and  $P(B) > 0$, then the following are equivalent
+     \begin{itemize} 
+        \item $A, B$ independent
+        \item $P(A|B) = P(A)$
+        \item $P(B|A) = P(B)$
+    \end{itemize}
+
+\textbf{Note}: In the degenerate case, $P(A) = 0$,  $A$ is independent to any other event.
+
+\textbf{Note}: Independence is completely different from disjointedness.
+\begin{itemize}
+   \item if $A, B$ disjoint, knowing $A$ occurs gives \textbf{ a lot} of information about $B$ 
+   \item the only exception is in the edge case, where $P(A) = 0$ or  $P(B) = 0$
+\end{itemize}
+
+\end{framed}
+
+
+\begin{framed}
+   \textbf{Theorem}: The following are equivalent 
+   \begin{itemize}
+      \item $A$ and $B$ are independent
+      \item $A^C$ and $B$ are independent
+      \item $A$ and $B^C$ are independent
+      \item $A^C$ and $B^C$ are independent
+   \end{itemize}
+\end{framed}
+
+\section{Independence of multiple events}
+
+\begin{framed}
+   Events $A, B, C$ independent if
+   \begin{itemize}
+      \item $P(A \cap B) = P(A) \cdot P(B)$
+      \item $P(B \cap C) = P(B) \cdot P(C)$
+      \item $P(A \cap C) = P(A) \cdot P(C)$
+      \item $P(A \cap B \cap C) = P(A) \cdot P(B) \cdot P(C)$
+   \end{itemize}
+\end{framed}
+
+
+\textbf{Example}: Recall the fair-unfair dice example. 
+
+let $A$ be the event that first flip is heads \\
+let $B$ be the event that second flip is heads \\
+let $C$ be the event that the first and second flips are the same \\
+
+Note that $A, B, C$ are \textbf{pairwise independent}, but knowing 2 gives complete information about the second. 
+
+\section{Independence of multiple events}
+
+\begin{framed}
+   \textbf{Definition} $A, B, C$ are independent if
+   \begin{itemize}
+      \item $P(A \cap B) = P(A) \cdot P(B)$
+      \item $P(B \cap C) = P(B) \cdot P(C)$
+      \item $P(C \cap A) = P(C) \cdot P(A)$
+      \item $P(A \cap B \cap C) = P(A) \cdot P(B) \cdot P(C)$
+   \end{itemize}
+
+   A collection of sets $A_1, A_2, \hdots A_n$ independent if 
+   \begin{itemize}
+      \item $P(A_i \cap A_j) = P(A_i) \cdot P(A_j)$
+      \item $P(A_i \cap A_j \cap A_k) = P(A_i) \cdot P(A_j) \cap P(A_k)$
+     
+   \end{itemize}
+   
+\end{framed}
+
+\textbf{Note}: additional reading, look for "information theory"
+
+\section{Conditional independence}
+\begin{framed}
+   \textbf{Definition}: Events $A, B$ are conditionally independent given  $E$ if
+   \[
+     P(A \cap B|E) = P(A|E) \cdot P(B|E) 
+   \] 
+
+   \textbf{Note}
+   \begin{itemize}
+      \item Two events can be conditionally independent given $E$ but not when given $E^C$ 
+         \begin{itemize}
+            \item Recall good Wharton class example
+         \end{itemize}
+         
+       \item Conditional independence does not imply independence. 
+         \begin{itemize}
+            \item Recall the "FAIR / UNFAIR COIN" example, coin tosses only independent given fair or unfair coin
+         \end{itemize}
+       \item Independence does not imply conditional independence.
+         \begin{itemize}
+            \item Recall "FAIR / UNFAIR COIN" example, ($A,B$ independent, but $A, B$ are not conditionally independent when given $C$
+         \end{itemize}
+   \end{itemize}
+\end{framed}
+
+
+
+
+
+
+

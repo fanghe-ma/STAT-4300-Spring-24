@@ -1,0 +1,110 @@
+\chapter{Class 14}
+
+\section{Continuous Distributions}
+
+From CDF to PDF: 
+\[
+  f'(x) = F'(x)
+\] 
+
+From PDF to CDF
+\[
+  F(x) = \int_{-\infty}^{x} f(t) dt 
+\] 
+
+\section{Rayleigh Distribution}
+
+\begin{framed}
+   \textbf{Definition}: The Rayleigh distribution has CDF
+   \[
+     F(x) = 
+     \begin{cases}
+        1 - e^{- \frac{x^2}{2}} \text{ for } x \geq 0  \\
+        0 \text{ for } x \leq 0
+     \end{cases}
+   \] 
+   The PDF is
+   \[
+     f(x) = 
+     \begin{cases}
+        xe^{ - \frac{x^2}{2}} \text{ for } x \geq 0 \\
+        0 \text{ for } x \leq 0
+     \end{cases}
+   \] 
+\end{framed}
+
+\section{Uniform distribution}
+
+\begin{framed}
+   \textbf{Definition} $U$ has the uniform distribution on the interval $(a, b)$
+     
+   \[
+     U \sim Unif(a, b)
+   \] 
+
+   If its PDF is 
+   \[
+     f(x) =
+     \begin{cases}
+        \frac{1}{b - a} \text{ for } a < x < b \\
+        0 \text{ otherwise}
+     \end{cases}
+   \] 
+
+   and CDF is
+   \[
+     F(x) =
+     \begin{cases}
+        0 \text{ if } x \leq a \\
+        \frac{x - a}{b - a} \text{ if } a < x < b \\
+        1 \text{ if } x \geq b
+     \end{cases}
+   \] 
+
+   \textbf{Expectation}
+   \[
+      E[U] = \int_{\infty}^{\infty}  xf(x) dx = \frac{1}{b-a} \int_{a}^{b}  xdx = \frac{b + a}{2}  
+   \] 
+
+   \text{Variance}
+   \[
+     E\left[ U^2\right]  = \int_{\infty}^{\infty}  x^2 f(x) dx = \frac{b^2 + ab + a^2}{3} 
+   \] 
+
+   \textbf{Key property}: subintervals within $(a, b)$ have probability proportional to their length. \\
+
+   For $U \sim Unif(0, 1)$
+    \[
+       P(u \in [0, \frac{1}{4}]) = \frac{1}{4}
+   \] 
+\end{framed}
+
+\subsection{Location-scale transform of uniform r.v.s}
+
+\begin{framed}
+   Given uniform  $r.v.$ $X$ with interval $(a, b)$
+    \[
+     X \sim Unif(a, b)
+   \] 
+
+   The location transform of $X$ has distribution
+   \[
+     cX + d \sim Unif(ca + d, cb + d)
+   \] 
+\end{framed}
+
+\subsection{Universality of uniform distribution}
+\begin{framed}
+   \textbf{Theorem}: let $F$ be a continuous CDF taht is strictly increasing over the support of the distribution 
+   \begin{itemize}
+      \item $X = F^{-1} (U) $ is a r.v. with CDF $F$
+      \item  $F(X)$ has the $Unif(0, 1)$ distribution
+   \end{itemize}
+\end{framed}
+
+
+
+
+
+
+

@@ -1,0 +1,69 @@
+\chapter{Class 22 - Transformations}
+
+
+\section{Discrete random variables}
+
+\begin{framed}
+   \textbf{Discrete}: Given the distribution of $X$, to compute the distribution of $Y = g(X)$
+    \[
+       P(Y = y) = P(g(X) = y) = \sum_{x \\ s.t. g(x) = y} P(X = x)
+   \] 
+
+   If $g$ invertible,
+   \[
+      P(Y = y) = P(g(X) = y) = P( X = g^{-1}(y))
+   \] 
+
+   
+  
+\end{framed}
+\section{Continuous random variables}
+
+\subsection{Via CDF}
+\begin{framed}
+
+   \textbf{Continuous}: \\
+   
+   Method 1 \\
+
+   Step 1: Find the CDF of $Y$ \\
+
+   For order-preserving, invertible $g$, 
+   \begin{align*}
+      F_Y(y) &= P(Y \leq y) = P(g(X) \leq y) = P(X \leq g^{-1}(y) = F_X(g^{-1}(y))
+   \end{align*}
+
+   Step 2: differentiate to get the PDF of $Y$ \\
+\end{framed}
+
+\subsection{Via change in variable}
+\begin{framed}
+   \textbf{Theorem}: Suppose $X$ is a continuous r.v. with PDF $f_X$, let  $Y = g(X)$ where $g$ is differentiable, and strictly increasing or decreasing on the support of $X$, then the PDF of $y$ is
+   \[
+      f_Y(y) = f_X(x) \cdot \left| \frac{dx}{dy} \right|  \text{ where } x = g^{-1}(y)
+   \] 
+
+   Note 
+   \begin{itemize}
+      \item 
+         \[
+           \frac{dx}{dy}  = \frac{1}{dy / dx}
+         \] 
+      \item  Support of $Y$ is the range of $g$ whose input is restricted to the support of $X$
+         \[
+           support(Y) = \{ y = g(x) \text{ for some } x \in support(X) \} 
+         \] 
+   \end{itemize}
+   
+  
+\end{framed}
+
+In multivariable setting
+\begin{framed}
+   Given $\vec{Y} = \left( Y_1, Y_2 \hdots Y_n \right) $, $\vec{y} = (y_1, y_2 \hdots y_n)$, 
+   \[
+      f_{\vec{Y}}(\vec{y}) = f_{\vec{X}}(\vec{x}) \cdot \left| \frac{\partial \vec{x}}{\partial \vec{y}} \right| 
+   \] 
+  
+\end{framed}
+

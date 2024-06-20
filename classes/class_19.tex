@@ -1,0 +1,45 @@
+\chapter{Class 19}
+
+\section{Independence of continuous R.Vs}
+
+\begin{framed}
+   \textbf{Definition}: $X, Y$ independent if 
+   \[
+      P(X \leq x,Y \leq y) = P(X \leq x) \cdot P(Y \leq y) \text{ for all } x, y \in \mathbb{R}
+   \] 
+
+   OR
+   \[
+      F_{X, Y}(x, y) = F_X(x) \cdot F_Y(y)
+   \] 
+\end{framed}
+
+\begin{framed}
+   \textbf{Theorem}: Let $X, Y$ be r.v.s with joint PDf $f_{X, Y}$, then the following are equivalent
+   \begin{itemize}
+      \item $X \perp Y$ 
+      \item  $f_{X, Y}(x, y) = f_X(x) \cdot f_Y(y)$ 
+      \item $f_{X|Y}(x|y)  = f_X(x)$
+      \item $f_{Y|x}(y|x)  = f_Y(y)$
+   \end{itemize}
+\end{framed}
+
+\begin{framed}
+   \textbf{Theorem}: If $X, Y$ independent then
+   \[
+     E\left[ XY\right]  = E\left[ X\right]  E\left[ Y\right] 
+   \] 
+
+   \textbf{Proof}: using LOTUS in 2D
+   \begin{align*}
+      E\left[ XY\right] &= \iint_{\mathbb{R}^2} xy f_{X, Y}(x, y) dx dy \\
+                        &= \iint_{\mathbb{R}^2} xf_X(x) \cdot yf_Y(y) dx dy \text{ by independence} \\
+                        &= \int_{\mathbb{R}}^{}  xf_X(x) dx \cdot \int_{\mathbb{R}}^{} yf_Y(y) dy \text{ by factoring}   \\
+                        &= E\left[ X\right]  \cdot E\left[ Y\right] 
+   \end{align*}
+   
+
+  
+\end{framed}
+
+

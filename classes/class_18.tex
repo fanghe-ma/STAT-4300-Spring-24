@@ -1,0 +1,64 @@
+\chapter{Class 18}
+
+\section{Discrete Joint Distributions} 
+\begin{framed}
+   \textbf{Definition}: The joint PMF of $X, Y$ is the function $P_{X,Y}$ given by
+   \[
+      P_{X, Y}(x, y) = P(X = x, Y = y) 
+   \] 
+\end{framed}
+
+\begin{framed}
+   \textbf{Definition}: The marginal PMF of $X$ is the function $p_X$ given by
+   \[
+      P_X(x) = P(X = x) = \sum_{y \in Val(Y)} P(X = x, Y = y)
+   \] 
+
+   Where $val(Y)$ denotes the support of $Y$
+\end{framed}
+
+\begin{framed}
+   \textbf{Definition}: The conditional PMF of $Y$ given $X = x$ is the function $P_{Y | X}(y | x)$ 
+   \[
+      P_{Y | X}(y | x) = P( Y = y | X = x) = \frac{P(X = x, Y = y)}{P( X = x)}
+   \] 
+\end{framed}
+
+
+\section{Continuous Joint Distributions} 
+\begin{framed}
+   \textbf{Definition}: The joint CDF of $X, Y$ is the function $F_{X,Y}$ given by
+   \[
+      F_{X, Y}(x, y) = P(X \leq x, Y \leq y) 
+   \] 
+\end{framed}
+
+\begin{framed}
+   \textbf{Definition}: The joint PDF of $X, Y$ is the function $f_{X, Y}$ given by
+   \[
+      f_{X, Y}(x, y) = \frac{\partial^2}{\partial x \partial y} F_{X, Y}(x, y)
+   \] 
+\end{framed}
+
+\begin{framed}
+   \textbf{Definition}: The marginal PDF of $X$ is the function $f_X$ given by
+   \[
+     f_X(x) = \int_{\infty}^{\infty}f_{X, Y}(x, y) dy
+  \] 
+\end{framed}
+
+\begin{framed}
+   \textbf{Definition}: The conditional PDF of $Y$ given $X = x$ is the function $f_{Y | X = x}$ given by
+   \[
+      f_{Y | X= x}(y) = \frac{f_{X, Y}(x, y)}{f_X(x)}
+   \] 
+\end{framed}
+
+
+
+
+\end{framed}
+
+
+
+

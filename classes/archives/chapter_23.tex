@@ -1,0 +1,50 @@
+\chapter{Convolutions and Conditional expectation}
+
+\section{Convolutions}
+
+\begin{framed}
+   \textbf{Theorem} [Discrete] Let $X, Y$ be independent r.v.s, the PMF of $T = X + Y$ is 
+   \[
+      P(T = t) =  \sum_{x} P(Y = t - x) \cdot P(X = x)
+   \] 
+
+   \textbf{Justification}: Law of Total Probability
+   \[
+      \text{LOTP}: P(B) = \sum_{i}P(B | A_i) P(A_i)
+   \] 
+
+   In this case
+   \begin{align*}
+      P(T = t) &= P(X + Y = t) \text{ by definition} \\
+               &= \sum_{x} P( X + Y = t | X = x) \cdot P(X = x)  \text{ LOTP} \\
+               &= \sum_{x}P( Y = t - x | X = x) \cdot P( X = x)  \text{ by rearranging}\\
+               &= \sum_{x}P( Y = t - x ) \cdot P( X = x) \text{ by independence of $X, Y$}\\ 
+   \end{align*}
+\end{framed}
+
+\begin{framed}
+   \textbf{Theorem} [Continuous] Let $X, Y$ be independent r.v.s, the PDF of $T = X + Y$ is
+    \[
+     f_T(t) = \int_{\infty}^{\infty}  f_X(x) \cdot f_Y(t - x) dx 
+   \] 
+  
+\end{framed}
+
+\section{Conditional expectation}
+
+\begin{framed}
+   \textbf{Definition}: Let $A$ be an event with $P(A) > 0 $ \\
+
+   Y is \textbf{discrete}
+   \[
+      E[Y | A] = \sum_{y} y P(Y | A)
+   \] 
+   Y is \textbf{continuous}
+   \[
+      E[Y | A] = \int_{\infty}^{\infty}   y f(Y | A) dy 
+   \] 
+
+
+  
+\end{framed}
+

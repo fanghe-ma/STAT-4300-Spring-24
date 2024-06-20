@@ -1,0 +1,146 @@
+\chapter{Class 17}
+
+\section{Moments}
+\begin{framed}
+   \textbf{Definition}: For any r.v. $X$ and $n = 1, 2, 3 \hdots$ \\ 
+
+   $n$-th moment:
+   \[
+     E\left[ X^n\right]  
+   \] 
+   $n$-th central moment:
+   \[
+     E\left[ (X - \mu)^n\right]  
+   \] 
+   $n$-th standardized moment
+   \[
+     E\left[  \left( \frac{X - \mu}{\sigma} \right)^n \right] 
+   \] 
+\end{framed}
+
+\section{Moment Generating Functions}
+\begin{framed}
+   \textbf{Definition}: The MGF of $X$ is
+   \[
+      M_X(t) = E\left[ e^{tX}\right] 
+   \] 
+\end{framed}
+
+\subsection{MGF of Bernoulli} 
+
+The MGF of  $X \sim Ber(p)$, for all $t \in \mathbb{R}$
+\begin{align*}
+   M_X(t) &= E\left[ e^{tX}\right]  \\
+          &= \sum_{x} e^{tX} P(X = x) \\
+          &= e^{t \cdot 1} p + e^{t \cdot 0} (1-p) \\
+          &= pe^{t} + (1 - p)
+\end{align*}
+
+\subsection{MGF of Uniform}
+
+The MGF of $U \sim Unif(a, b)$, for all  $t \in \mathbb{R}$
+
+\begin{align*}
+   M_U(t) &= E\left[ ^{tU}\right]  \\
+          &= \int_{\infty}^{\infty}   e^{tU} f(u) du \\
+          &= \frac{1}{b - a} \int_{a}^{ b}  e^{tu} du \\
+          &= \frac{1}{b - a} \left. \left( \frac{e^{tu}}{t} \right)  \right|_{a}^{b}  \\
+          &= \frac{e^{tb} - e^{ta} }{t (b - a)}
+\end{align*}
+
+\[
+  M_U(t) = 
+  \begin{cases}
+     \frac{e^{tb} - e^{ta} }{t(b-a)} \text{ if } t \neq 0 \\
+     1 \text{ if } t = 0
+  \end{cases}
+\] 
+
+\subsection{MGF of Exponential}
+For $X \sim Expo(1)$ for  $t < 1$
+
+ \begin{align*}
+    M_X(t) &= E\left[ e^{tX}\right]  \\
+           &= \int_{-\infty}^{\infty}  e^{tx} f(x) dx \\
+           &= \int_{0}^{\infty} e^{tx} e^{-x} dx \\
+           &= \int_{0}^{\infty}  e^{(t-1)x } dx \\
+           &= \left. \frac{e^{(t-1)x}}{t - 1} \right|_{0}^{\infty}   \\
+           &= \int_{e^{(t-1) \infty} - 1}^{t - 1}   \\
+           &= 
+           \begin{cases} 
+              \infty \text{ if } t \geq 1 \\
+              \frac{1}{1 - t} \text{ if } t < 1
+           \end{cases}
+\end{align*}
+
+\subsection{MGF of standard gaussian}
+For $Z \sim N(0, 1)$ for all $t \in \mathbb{R}$
+\[
+   M_Z(t) = E\left[ e^{tZ}\right]  = e^{ \frac{t^2}{2}}
+\] 
+
+For general Gaussian, $X \sim N(\mu, \sigma^2), X = \mu + \sigma Z$
+\begin{align*}
+   M_X(t) &= M_{\mu + \sigma Z} (t) \\
+          &= e^{\mu t} M_Z(\sigma t) \\
+          &= e^{\mu t} e^{ \frac{(\sigma t^2)}{2}} \\
+          &= e^{\mu t + \frac{\sigma^2 t^2}{2}}
+\end{align*}
+
+For $X_1, X_2$ independent where
+\begin{itemize}
+   \item $X_1 \sim N(\mu_1, \sigma_1^2$ 
+   \item $X_2 \sim N(\mu_2, \sigma_2^2$ 
+\end{itemize}
+
+Their sum has MGF
+\begin{align*}
+   M_{X_1 + X_2}(t) &= M_{X_1}(t) \cdot M_{X_2}(t) \\
+                    &= e^{(\mu_1 + \mu_2)t + \frac{ \left( \sigma_1^2 + \sigma_2^2 \right) t^2}{2}}
+\end{align*}
+
+\[
+  X_1 + X_2 \sim N(\mu_1 + \mu_2, \sigma_1^2 + \sigma_2^2 )
+\] 
+
+
+
+\subsection{Properties of MGF}
+
+\textbf{Derivatives of MGF gives the moments} 
+\begin{framed}
+   \textbf{Theorem}: IF the MGF exists
+   \[
+      E\left[ X^n\right]  = M^{(n)} (0) 
+   \] 
+\end{framed}
+
+\textbf{MGF determines the distribution.}
+\begin{framed}
+   \textbf{Theorem}: If $X, Y$ have the same MGF then they have the same distribution. 
+\end{framed}
+
+\textbf{MGF of sum of independent R.Vs}
+\begin{framed}
+   \textbf{Theorem}: If $X, Y$ are independent and their MGF exist, then 
+   \[
+      M_{X  + Y}(t) = M_X(t) \cdot M_Y(t) 
+   \] 
+\end{framed}
+
+\textbf{Location-scale transform of MGFs}
+\begin{framed}
+   If $X$ has MGF $M_X(t)$, then a + bX has MGF
+   \begin{align*}
+      M_{a + bX} (t) &= E\left[ e^{t (a + bX)}\right]  \\
+                     &= E\left[ e^{ta} e^{tbX}\right]  \\
+                     &= e^{ta} E\left[ e^{tbX}\right]  \\
+                     &= e^{ta } M_X(tb)
+   \end{align*}
+   
+  
+\end{framed}
+
+
+
+

@@ -1,0 +1,35 @@
+\chapter{Lesson 10}
+
+\section{Functions of random variables}
+
+A function of a r.v. is a r.v. Given sample space $S$, random variable $X$ and function $g : \mathbb{R} \rightarrow \mathbb{R}$, $g(X)$ is a r.v. that takes the value $g(X(s))$ for $s \in S$
+
+\section{Independence of r.v.s}
+
+\begin{framed}
+   \textbf{Definition}: $X, Y$ independent if
+   \[
+     P(X \leq x, Y \leq y) = P(X \leq x) \cdot P(Y \leq y)
+   \] 
+
+    $X_1, \hdots X_n$ independent if
+    \[
+      P(X_1 \leq x_1 \hdots X_n \leq x_n) = P(X_1 \leq x_1) \cdot \hdots P(X_n \leq x_n)
+    \] 
+\end{framed}
+
+\begin{framed}
+   \textbf{Theorem}: If $X, Y$ independent then any function of $X$ is independent of any function of $Y$ 
+   \[
+     X \perp Y \implies f(X) \perp g(Y) \text{ for any }f, g
+   \] 
+\end{framed}
+
+\begin{framed}
+   \textbf{Definition}: $X_1, \hdots X_n$ are i.i.d. if 
+   \begin{itemize}
+      \item $X_1 \hdots X_n$ independent
+      \item $X_1 \hdots X_n$ have the same distribution
+   \end{itemize}
+\end{framed}
+

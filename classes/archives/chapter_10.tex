@@ -1,0 +1,76 @@
+\chapter{Random Variables \& Expectations}
+
+\section{Function of random variables}
+
+\begin{framed}
+   Given sample space $S$, r.v. $X$, and function $g: \mathbb{R} \rightarrow \mathbb{R}$, $g(X)$ is the r.v. that takes value $g(X(s))$ for any outcome $s \in S$ \\
+
+   If $X, Y$ are r.v., any function of $g(X, Y)$ is also a r.v.
+\end{framed}
+
+\section{Independence of random variables}
+
+\begin{framed}
+   \textbf{Definition}: $X, Y$ independent if
+   \[
+     P(X \leq x, Y \leq y) = P(X \leq x) \cdot P(Y \leq y) \text{ for all } x, y \in \mathbb{R}
+   \] 
+
+   $X_1, X_2, \hdots X_n$ are independent if
+   \[
+     P(X_1 \leq x_1, \hdots X_n \leq x_n) = P(X_1 \leq x_1) \cdot \hdots \cdot P(X_n \leq x_n)
+   \] 
+
+   \textbf{Theorem}: If $X, Y$ independent, any function of $X$ is independent of any function of $Y$ \\
+
+   \textbf{Theorem}: IF $X, Y$ are discrete, the following are equivalent
+   \begin{itemize}
+      \item $X, Y$ independent 
+      \item $P(X \leq x, Y \leq y) = P(X \leq x) P(Y \leq y)$
+      \item $P(X = x, Y = y) = P(X = x) P(Y = y)$
+      \item $P(X = x| Y = y) = P(X = x) $
+      \item $P(Y = y| X = x) = P(Y = y) $
+   \end{itemize}
+\end{framed}
+
+\begin{framed}
+   \textbf{Definition} $X_1, \hdots X_n$ are independent and identically distributed if 
+   \begin{itemize}
+      \item $X_1 \hdots X_n$ independent
+      \item $X_1 \hdots X_n$ have the same distribution
+   \end{itemize}
+\end{framed}
+
+\begin{framed}
+   \textbf{Definition}: $X, Y$ are conditionally independent given $Z$ if
+   \begin{align*}
+      P(X \leq x, Y \leq y | Z \leq z) = P(X \leq x | Z \leq z) P(Y \leq y | Z \leq z) 
+   \end{align*}
+\end{framed}
+
+\begin{framed}
+   \textbf{Definition}: The conditional PMF of $X$ given $Z $ is
+   \[
+     P(X = x | Z = z)
+   \] 
+\end{framed}
+
+\section{Expectation}
+
+\begin{framed}
+   \textbf{Definition}: The expected value of a discrete r.v. $X$ whose possible values are $x_1, x_2 \hdots$ is
+   \[
+      E[X] = \sum_{j =1}^{\infty} x_j P(X = x_j)
+   \] 
+\end{framed}
+
+\subsection{Linearity of expectation}
+
+\begin{framed}
+   For any r.v. $X, Y$ and constant $c$
+   \begin{itemize}
+      \item $E[  X + Y ] = E[X] + E[Y]$
+      \item $E[  cX] = c E[X]$
+   \end{itemize}
+\end{framed}
+

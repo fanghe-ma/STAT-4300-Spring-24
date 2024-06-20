@@ -1,0 +1,96 @@
+\chapter{Lesson 25}
+
+\section{Markov and Chebyshev Inequalities}
+
+\subsection{Markov's inequality}
+\begin{framed}
+   \textbf{Theorem} For any r.v. $X$ and any constant $a > 0$
+    \[
+     P \left( |X| \geq a \right)  \leq \frac{E\left[ |X|\right] }{a}
+   \] 
+
+   Proof: Let $Y = |X|$, show that 
+   \[
+      a P(Y \geq a) \leq E[Y]
+   \] 
+   Using Tower's Law
+   \begin{align*}
+      E[Y] &= E\left[ Y | Y \geq a\right]  P(Y \geq a) + E\left[ Y | Y < a\right]  P(Y < a) \\
+      E\left[ Y | Y \geq a\right]  &\geq a \\
+      E\left[ Y | Y < a\right]  &\geq 0 \\
+      P(Y \geq a)  &\geq 0 \\
+      P(Y < a)  &\geq 0
+      E[Y] \geq aP(Y \geq a) 
+   \end{align*}
+\end{framed}
+
+\subsection{Chebyshev's Inequality}
+\begin{framed}
+   \textbf{Theorem}: Let $X$ have mean $\mu$ and variance $\sigma^2$, then for any $a > 0$
+    \[
+     P( |X - \mu| \geq a) \leq \frac{\sigma^2}{ a^2}
+   \] 
+
+   \textbf{Usage}: 
+   \[
+     P ( |X - \mu| \geq c \sigma) \leq \frac{1}{c^2}
+   \] 
+
+   \textbf{Proof}
+   \begin{align*}
+      P( |X - \mu| \geq a) &= P( (X - \mu)^2 \geq a^2) \\
+                           &\leq \frac{E\left[ (X - \mu)^2\right] }{a^2} \\
+                           &= \frac{Var(X)}{ a^2}
+   \end{align*}
+\end{framed}
+
+\section{Limit Theorem}
+
+\subsection{Weak law of large numbers}
+\begin{framed}
+\textbf{Theorem:} for $X_1, X_2 \hdots$ i.i.d with finite expectation $\mu$ and variance $\sigma^2$, for each $n = 1, 2,  \hdots$,  let $ \overline{X_n} = \frac{X_1 + \hdots + X_n }{n}$ 
+\[
+   \forall \epsilon > 0, \lim_{n \to \infty} P( |\overline{X_n} - \mu| 
+\leq 1) = 1] 
+\] 
+
+\textbf{Proof}: \\
+
+\color{red} 
+\textbf{VERY IMPORTANT}
+\color{black} 
+
+Step 1: $E[ \overline{X_n} ] = \mu$ 
+\[
+   E\left[ \overline{X_n} \right]  = E\left[ \frac{1}{n} \sum_{i = 1}^{n} X_i\right]  = \frac{1}{n} E\left[ X_i\right]  = \frac{1}{n} \sum_{i = 1}^{n} \mu = \mu
+\]  
+
+
+Step 2: $Var( \overline{X_n} ) = \frac{\sigma^2}{n}$ 
+\[
+   Var \left( \overline{X_n} \right)  = Var \left(  \frac{1}{n} \sum_{i = 1}^{n} X_i \right)  = \frac{1}{n^2} Var \left(  \sum_{ i = 1}^{n} X_i \right)  = \frac{1}{n^2} \sum_{i = 1}^{n} Var(X_i)  = \frac{1}{n^2} \sum_{i = 1}^{n} \sigma^2 = \frac{\sigma^2}{n}
+\] 
+Step 3: Use the Chebyshev's inequality on $ \overline{X_n}$ 
+\[
+  P \left( \left| \overline{X_n} - \mu \right| \geq \epsilon  \right)  \leq \frac{\sigma^2}{ n \epsilon^2}
+\] 
+
+Hence 
+\[
+   \lim_{n \to \infty} P \left( \left| \overline{X_n} - \mu \right|  \leq \epsilon  \right)  = 1
+\] 
+\end{framed}
+
+\begin{framed}
+   \textbf{Theorem} Central Limit Theorem states that for $X_1, X_2 \hodts$ i.i.d from some distribution with finite mean $\mu$ and variance  $\sigma$, for any $n = 1, 2, 3 \hdots$, 
+   \[
+      \overline{X}_n = \frac{X_1 \hdots X_n}{n} 
+   \] 
+   and 
+   \[
+     Z_n = \frac{\overline{X}_n - \mu}{ \frac{sigma}{ \sqrt{n}}} = \sqrt{n} \left( \frac{\overline{X}_n  - \mu}{\sigma} \right) 
+   \] 
+\end{framed}
+
+  
+

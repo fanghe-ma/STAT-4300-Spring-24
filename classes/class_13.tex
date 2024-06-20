@@ -1,0 +1,73 @@
+\chapter{Poisson Distribution}
+
+\section{Poisson Distribution}
+
+Poisson Distribution is a common model for count data with support over all the non-negative integers. It is useful for modelling the number of successes in a sequence of Bernoulli trials where
+\begin{itemize}
+   \item number of trials is large
+   \item success probability is low
+\end{itemize}
+
+The Poisson distribution provides a simple and good enough approximation to a Binomial distribution when $p$ is small and $n$ is large. 
+
+\begin{framed}
+   \textbf{Definition}: A r.v. $X$ has the Poisson distribution with parameter $\lambda > 0$ if its PMF is
+   \[
+      P(X = k) = e^{-\lambda} \frac{\lambda^k}{k!} \implies X \sim Pois(X)
+   \] 
+
+   \textbf{Expectation}
+   \[
+      E[X] = \lambda 
+   \] 
+
+   Approach 1: the mean of $Y \sim Bin(n, p) $ is  $np $, which stays constant for a Poisson distribution. \\
+
+   Approach 2: 
+    \begin{align*}
+       E[X] &= \sum_{k = 1}^{\infty} k P(X = k) \\
+            &= \sum_{k = 1}^{\infty} k \cdot e^{- \lambda} \cdot \frac{\lambda^k}{k!} \\
+            &= e^{-\lambda} \sum_{k = 1}^{\infty} \frac{\lambda^k}{(k-1)!} \\
+            &= e^{-\lambda} \cdot \lambda \cdot \sum_{k = 1}^{\infty} \frac{\lambda^{k-1}}{(k-1)!} \\
+            &= e^{-\lambda} \cdot \lambda \cdot \sum_{n = 0}^{\infty} \frac{\lambda^n}{ n!} \\
+            &= e^{-\lambda } \cdot \lambda \cdot e^{\lambda}
+   \end{align*}
+   
+\end{framed}
+
+This is a valid PMF because \\
+   1) PMF is non-negative for all values in the support
+   2) PMF sums to 1 over the entire support
+   \begin{align*}
+      \sum_{k = 0}^{\infty} e^{\lambda} \frac{\lambda^k}{k!} &= e^{\lambda } \sum_{k = 0}^{\infty} \frac{\lambda^k}{k!} \\
+      &= e^{-\lambda} e^{\lambda} \\
+      &= 1
+   \end{align*}
+  
+
+\section{Continuous RVs}
+
+\begin{framed}
+   \textbf{Definition}: $X$ is a continuous r.v. if it has a continuous distribution. The distribution is ontinuous if its CDF $F(u) = P(X \leq u)$ is
+   \begin{itemize}
+      \item differentiable everywhere
+      \item continuous everywhere, and differentiable at all but a finite number of points
+   \end{itemize}
+\end{framed}
+
+\begin{framed}
+   \textbf{Definition}: The probability density function of $X$ with $CDF$ $F$ is
+   \[
+     f(u) = F'(u)
+   \] 
+
+   The support is the set of all $u$ such that $f(u) > 0$ 
+
+   The CDF can be found via
+   \[
+     F(x) = \int_{-\infty}^{x}  f(t) dt 
+   \] 
+  
+\end{framed}
+
+

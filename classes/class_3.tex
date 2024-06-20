@@ -1,0 +1,116 @@
+\chapter{Class 3}
+
+\section{Properties of probability}
+
+\begin{framed}
+   \textbf{Complement rule}: 
+   \[
+     P(A^C) = 1 - P(A)
+   \] 
+
+   Reasoning:
+   \begin{align*}
+      &P(A) + P(A^C) \\
+      =& P(A \cup A^C) \text{ by axiom 2, sum of probability of disjoint events} \\
+      =& P(S) \text{ by definition of complement} \\
+      =& 1 \text{by axiom 1}
+   \end{align*}
+\end{framed}
+
+\begin{framed}
+   \textbf{Subset rule}: If $A \in B$, then
+   \[
+     P(A) \leq P(B)
+   \] 
+   Reasoning: 
+   \begin{align*}
+      & B = (B \cap A^C) \cup A \\
+      &P(B) = P((B \cap A^C) \cup A) \\
+      =& P(B \cap A^C) + P(A) \text{ by axiom 2} \\
+      \geq& P(A) \text{ since $P(B \cap A^C) \geq 0$}
+   \end{align*}
+   
+Note that $A \subseteq B$ means that $A \implies B$
+\end{framed}
+
+\begin{framed}
+\textbf{Inclusion-exclusion principle}
+\[
+  P(A \cup B) = P(A) + P(B) - P(A \cap B)
+\] 
+\begin{align*}
+   P(A \cup B \cup C) &= P(A) + P(B) + P(C)  \\
+                      & - P(A \cap B) - P(B \cap C) - P(A \cap C) \\
+                      &+ P(A \cap B \cap C)
+\end{align*}
+\end{framed}
+
+\section{Conditional probability}
+\begin{framed}
+\textbf{Definition}: Conditional probability of $A$ given $B$ is 
+\[
+  P(A|B) = \frac{P(A\cap B)}{P(B)}
+\] 
+
+\begin{itemize}
+   \item $A|B$ is not an event
+   \item $P(A|B)$ is the probability that $A$ occurs given that $B$ occurs  
+   \item $A|B $ and $B|A$ both makes sense, regardless of chronology
+   \item conditional probability concerns the information that one event provides for the other, not about causation
+\end{itemize}
+
+
+\end{framed}
+
+\subsection{Probability of intersections}
+\begin{framed}
+   \textbf{Theorem}: If $A, B$ have positive probability, then
+\[
+  P(A \cap B) = P(B) \cdot P(A |B) = P(A) \cdot P(B | A)
+\] 
+
+Note the following shorthand in notation
+\begin{itemize}
+   \item $P(A|B, C) = P(A | B \cap C)$ 
+   \item $P(A, B) = P(A \cap B)$
+   \item  $P(A, B, C) = P(A \cap B \cap C)$
+\end{itemize}
+
+For 3 events, if $P(A, B) > 0$
+ \[
+  P(A, B, C) = P(A) \cdot P(B|A) \cdot P(C | A, B)
+ \] 
+
+ In general,
+ \[
+    P(A_1, \hdots A_n) = P(A_1) \times P(A_2 | A_1) \times P(A_3 | A_1, A_2) \hdots P(A_n | A_1 , \hdots A_{n-1})
+ \] 
+\end{framed}
+
+
+
+
+\subsection{Bayes' Law and the law of total probability}
+\begin{framed}
+   \textbf{Theorem}: Bayes Theorem states that if $P(A), P(B) > 0$, then
+ \[
+  P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}
+\]
+\end{framed}
+
+\begin{framed}
+   \textbf{Theorem}: Law of total probability states that for $A_1, \hdots A_n$ that is a partition of sample space $S$ \\
+
+   Where partition implies 
+   \begin{itemize}
+      \item $A_i$ are disjoint, and their union is $S $
+      \item $A_i$ are mutually exclusive and collectively exhaustive
+   \end{itemize}
+
+   Then, if $P(A_i) > 0$ for all $i$, 
+   \[
+      P(B) = \sum_{i = 1}^{n} P(B | A_i) \cdot P(A_i)
+   \] 
+\end{framed}
+
+

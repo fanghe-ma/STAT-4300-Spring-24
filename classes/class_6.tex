@@ -1,0 +1,31 @@
+\chapter{Class 6}
+
+\section{Problem solving strategies using conditioning}
+
+\subsection{Monty Hall}
+
+Main takeaway - Remaining door has gone through some selection process, hence it has a higher probability of having the car. \\
+
+Let $C_i$ be the event that the car is in door $i$, $i = 1, 2, 3$
+\begin{align*}
+   P(\text{Switching strategy gets car}) &= \sum_{i = 1}^{3}P(\text{switching strategy gets car | C_i}) \cdot P(C_i) \\
+                                         &= 0 \cdot \frac{1}{3} + 1 \cdot \frac{1}{3} + 1 \cdot \frac{1}{3} \\
+                                         &= \frac{2}{3}
+\end{align*}
+
+\subsection{Amoeba Problem}
+
+There is a single amoeba which in 1 minute, either stays the same, splits in 2, or dies with equal probability. Each amoeba is independent of all other amoebas. What is the probability it eventually dies out? \\
+
+Let $P$ be the event that the amoeba population eventually dies out. \\
+Let $A_0$ be the event that a single amoeba dies in the next minute. \\
+Let $A_1$ be the event that a single amoeba stays the same. \\ 
+Let $A_2$ be the event that it splits in 2. \\
+
+\begin{align*}
+   P(B) &= P(B|A_0) P(A_0) + P(B | A_1) P(A_1) + P(B | A_2) P(A_2) \\ 
+        &= 1 \cdot \frac{1}{3} + P(B) \frac{1}{3} + (P(B))^2 \frac{1}{3} \\
+   x &= \frac{1}{3} + \frac{x}{3} + \frac{x^2}{3} \\
+   x &= 1
+\end{align*}
+

@@ -1,0 +1,71 @@
+\chapter{Class 12}
+
+\section{Indicator R.V.s}
+
+\begin{framed}
+   \textbf{Definition}: The indicator r.v. for an event $A$, $I_A$ takes value $1$ if $A$ occurs and $0$ if $A$ does not occur. 
+   \[
+     I_A \sim Ber(p), p = P(A)
+   \] 
+   \textbf{Fundamental bridge between probability and expectation}
+   \[
+     E\left[ I_A\right]  = p = P(A)
+   \] 
+
+   Properties
+   \begin{itemize}
+      \item $I_{A^C} = 1 - I_A$
+      \item $I_{A \cap B} = I_A \cdot I_B$
+      \item $I_{A \cup B} = I_A +I_B - I_A I_B$
+   \end{itemize}
+\end{framed}
+
+\section{Expectation via Survival Function / Darth Vader rule}
+
+\begin{framed}
+   \textbf{Theorem}: Let $X$ be a r.v. with support $0, 1, 2 \hdots$
+   \[
+      E\left[ X\right]  = \sum_{n = 0}^{\infty} P(X > n)  = \sum_{n = 1}^{\infty} P(X \geq n)
+   \] 
+
+   Special case when $X$ takes as its support $[0, 1, \hdots N]$
+   \[
+      E\left[ X\right]  = \sum_{N = 0}^{N - 1} P(X > n) = \sum_{n = 1}^{N} P(X \geq n)
+   \]  
+\end{framed}
+
+\section{Law of the Unconscious Statistician (LOTUS)}
+
+\begin{framed}
+   \textbf{Theorem}: 
+   \[
+      E\left[ g(X)\right]  = \sum_{x} g(x) P(X = x)
+   \] 
+  
+\end{framed}
+
+\section{Variance}
+\begin{framed}
+   \textbf{Definition}: The Variance of a r.v. $X$ is
+   \[
+     Var(X) = E\left[ \left( X - E\left[ X\right] \right)^2\right]  = E\left[ X^2`\right]  - E\left[ X\right]^2
+   \] 
+
+   The standard deviation of $X$ is
+   \[
+     sd(X) = \sqrt{Var(X)}
+   \] 
+
+   Properties
+   \begin{itemize}
+      \item $Var(X) \geq 0$
+      \item $Var(X + c) = Var(X)$
+      \item $Var(cX)= c^2Var(X)$
+      \item $Var(X + Y) =  Var(X) + Var(Y)$ if $X \perp Y$
+   \end{itemize}
+   
+  
+\end{framed}
+
+
+

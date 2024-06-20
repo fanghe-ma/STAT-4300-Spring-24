@@ -1,0 +1,162 @@
+\chapter{Lesson 11}
+
+\section{Geometric distribution}
+
+\begin{framed}
+   For a sequence of of Bernoulli trials, each with the same success probability $p$, the number of trials \textbf{before} first success is a \textbf{geometric distribution with parameter $p$}
+   \[
+     X \sim Geom(p)
+   \] 
+   \[
+     X + 1 \sim FS(p)
+   \] 
+
+   \textbf{PMF}:
+
+   \begin{align*}
+      P(X = k) = (1 - p)^k p
+   \end{align*}
+
+   \textbf{Expectation}
+   \begin{align*}
+      E[X] &= \sum_{k = 0}^{\infty} k \cdot P(K = k) \\
+           &= \sum_{k = 0}^{\infty}k (1-p)^k p \\
+           &= p\sum_{k = 0}^{\infty}k q^k  \\
+           &= p \frac{q}{(1-q)^2}  \\ 
+           &- \frac{1 - p}{p}
+   \end{align*}
+
+   \begin{align*}
+      E[FS(p)] &= E[X + 1] \\
+      &= E[X] + 1 \\
+      &= \frac{1}{p}
+   \end{align*}
+\end{framed}
+
+\section{Indicator RVs}
+
+\begin{framed}
+   \textbf{Definition}: The indicator r.v. for an event $A$ is the r.v. $I_A$ that takes value $1$ if $A$ occurs, and $0$ if $A$ does not occur 
+   \[
+     I_A \sim Ber(p) \text{ where } p = P(A)
+   \] 
+   \textbf{Theorem}: Fundamental bridge between probability and expectation
+   \[
+      E[I_A] = p = P(A)
+   \] 
+
+   \textbf{Properties}
+   \begin{enumerate}
+      \item $I_{A^C} = 1 - I_A $
+      \item $I_{A \cap B} = I_A \cdot  I_B$
+      \item $I_{A \cup B} = I_A + I_B - I_A \cdot I_B$
+   \end{enumerate}
+\end{framed}
+
+\section{Darth Vader Rule - Expectation via Survival Function}
+
+\begin{framed}
+   \textbf{Theorem}: Let $X$ be a discrete r.v. with support $[0, 1, \hdots ] $ 
+   \[
+      E[X] = \sum_{n = 0}^{\infty} P(X > n)  = \sum_{n = 1}^{\infty} P(X \geq n)
+   \] 
+   Where 
+   \begin{align*}
+      P(X > n) &= 1 - P(X \leq n) \\
+               &= 1 - F(n)  \text{ known as the survival function}
+   \end{align*}
+
+   For $X$ with support $[1 \hdots N]$
+    \[
+       E[X] = \sum_{n = 0}^{N} P(X > n) = \sum_{n=1}^{N} P(X \geq n)
+   \] 
+
+   \textbf{Reasoning}
+
+   \begin{align*}
+      X &= \sum_{n=1}^{N} I_n \text{ where }  \\
+      I_n &= \mathbb{1}[X \geq n]
+   \end{align*}
+\end{framed}
+
+
+
+
+
+%--------------------------------------------------------------------
+
+
+\chapter{Moment Generating Functions}
+
+\section{Moments}
+\begin{framed}
+   \textbf{Definition}: For any r.v..$X$ and any $n = 1, 2, 3 \hdots$
+    \begin{itemize}
+       \item $n$-th moment: 
+          \[
+             E[X^n]
+          \] 
+       \item $n$-th central moment: 
+          \[
+             E[(X - \mu)^n]
+          \] 
+       \item $n$-th standardized moment: 
+          \[
+             E \left[( \frac{X - \mu}{\sigma})^n \right]
+          \] 
+   \end{itemize}
+
+   \textbf{Motivation}: Moments are often used as summaries of a distribution
+   \begin{itemize}
+      \item Mean
+      \item Variance
+      \item Skewness
+      \item Excess kurtosis
+   \end{itemize}
+\end{framed}
+
+\section{Moment Generating Functions}
+\begin{framed}
+   \textbf{Definition}: The MGM of a r.v. $X$ is a function of $t$
+   \[
+      M_X(t) = E \left[ e^{tX} \right]
+   \] 
+
+   \textbf{Note} that MGM is a function from $\mathbb{R}$ to $\mathbb{R}$
+
+   The MGM might be $\infity$ for some values of $t$, we say the MGM exists if it is finite for all $t$ within some open interval
+\end{framed}
+
+\subsection{Moment Generating Function of Bernoulli}
+\subsection{Moment Generating Function of Uniform}
+\subsection{Moment Generating Function of Exponential}
+
+Given $X \sim Expo(1)$
+\begin{align*}
+   M_X(t) &= E\left[ e^{tX} \right]  \\
+          &= \int_{0}^{\infty}  e^{tx} \\
+\end{align*}
+
+\section{Why MGFs are useful}
+\begin{framed}
+   \textbf{Theorem}: Derivatives of MGFs give the moments \\
+
+   If the MGF exists
+   \[
+      E[X^n] = M^{(n)} (0) \text{ for } n = 1, 2, \hdots
+   \] 
+  
+\end{framed}
+
+\begin{framed}
+   \textbf{Theorem}: MGF determines the distribution\\
+   If $X, Y$ have the same MGF then they have the same distribution
+\end{framed}
+\begin{framed}
+   \textbf{Theorem}: MGF of independent r.v.s\\
+
+   If $X$ and $Y$ are independent and their MGFs exist, then 
+   \[
+      MGF_{X + Y}(t)  =  M_X(t) \cdot M_Y(t)
+   \] 
+\end{framed}

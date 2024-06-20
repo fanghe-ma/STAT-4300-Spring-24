@@ -1,0 +1,69 @@
+\chapter{Class 4}
+
+\section{Example 1 - Flipping Conditioning}
+1 fair and 1 biased coin (heads with probability $0.75$ ). Pick one coin, flip 3 times, and observe $HHH$. What is the probability that the coin is fair? \\
+
+Solution:
+
+let $F$ be the event that the fair coin was picked\\
+let $A$ be the event that the result is $HHH$ \\
+\begin{align*}
+   P(F|A) &= \frac{P(A|F) P(F)}{P(A)}
+\end{align*}
+
+
+\section{Example 2 - Base Rate fallacy}
+Whartonitis problem. \\
+
+$1\%$ of Wharton has Whartonitis. Test has $5\%$ false positive rate, $5\%$ false negative rate. If a test returns positive, what is the probability that the student has Whartonitis? \\
+
+Let $W $ be the event of Whartonitis\\
+Let $T$ be the event of testing positive. 
+
+\begin{align*}
+   P(W) &= 0.01 \\
+   P(T |W^C) = 0.05  \\
+   P(T^C |W) = 0.05
+\end{align*}
+
+Then
+\begin{align*}
+   P(W|T) &= \frac{P(T|W)P(W)}{P(T)} \\
+          &= \frac{P(T|W) P(W)}{P(T|W) P(W) + P(T|W^C) P(W^C)} \\
+          &= \frac{0.95 \times 0.01}{0.95 \times 0.01 + 0.05 \times 0.99}
+          &= 0.16
+\end{align*}
+
+\section{Conditional probabilities are probabilities}
+
+Note that
+\begin{itemize}
+   \item $A|B$ is not an event 
+   \item $P(\cdot)$ is not the same probability function as  $P(\cdot |B)$ 
+   \item In conditional probability, when $P(B) >  0$, we define a function $P(\cdot |B)$ that takes $A$ as an input, and outputs $P(A|B)$
+   \item Conditional probabilities functions are valid probability functions because they satisfies the axioms
+\end{itemize}
+
+\begin{framed}
+   \textbf{Theorem}: If $P(\cdot)$ satisfies the rules and $P(B) >0$
+  , then $P(\cdot |B)$ is a valid probability function, and all the rules of probability applies. \\
+
+  \textbf{Complement Rule}: 
+  \[
+    P(A|B) = 1- P(A^C |B)
+  \] 
+  \textbf{Inclusion-exclusion}:
+  \[
+    P \left( \left( A_1 \cup A_2 \right) |B \right)  = P(A_1 |B) + P(A_2 | B) - P(A_1 \cap A_2 |B)
+  \] 
+
+  \textbf{Bayes' Rule}
+  \[
+    P(A| B, C) = \frac{P(C | A, B) P(A | B)}{P(C | B)}
+  \] 
+  \textbf{Law of total probability}: If $A_1, \hdots A_n$ partition $S$, then
+  \[
+     P(C | B) = \sum_{i = 1}^{n}P(C | A_i, B) \cdot P(A_i |B)
+  \] 
+\end{framed}
+

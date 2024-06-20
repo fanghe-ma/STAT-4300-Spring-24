@@ -1,0 +1,127 @@
+\chapter{Class 7}
+
+\section{Random Variables}
+
+\begin{framed}
+   \textbf{Definition:} Given an experiment with sample space $S$, a random variable is a function that maps each possible outcome  $s \in S$ to a real number
+\end{framed}
+
+\section{Distribution}
+\begin{framed}
+   \textbf{Definition}: A r.v. $X$ is discrete if there is a finite list of values $a_1, \hdots a_n$ or an infinite list of values such that $a_1, a_2 \hdots$ such that $P(X = a_j$ \text{ for some } $j) = 1$
+\end{framed}
+
+\begin{framed}
+   \textbf{Definition}: Support of $X$ is the set of all values $x$ such that $P(X = x) > 0$
+\end{framed}
+
+\begin{framed}
+   \textbf{Definition}: The probability mass function of a discrete r.v.  $X$ specifies the probability of any particular value of $X$ 
+   \[
+     p_X (x) = P(X = x)
+   \] 
+
+For $p_X$ to be a valid pmf, 
+\begin{itemize}
+   \item sum to $1$ : $\sum_x p_X(x) = 1$
+   \item non-negative : $p_X(x) \geq 0$ for any $x$
+\end{itemize}
+
+\end{framed}
+
+\section{Bernoulli \& Binomial Distributions}
+
+\begin{framed}
+   \textbf{Definition} A random variable $X$ has the bernoulli distribution with parameter $p$ if
+   \begin{itemize}
+      \item $P(X=1) = p$
+      \item $P(X=0) = 1-p$
+   \end{itemize}
+
+   $X$ is distributed as Bernoulli with parameter $p$ \[
+     X \sim Ber(p)
+   \] 
+
+
+   For any event $A$, we can define an indicator random variable $I_A$ that equals $1$ if $A$ occurs, $0$ otherwise
+   \[
+     I_A \sim Ber(p), p = P(A)
+   \] 
+   \textbf{Expectation}
+   \[
+      E[I_A] = p
+   \] 
+   \textbf{Variance}
+   \[
+      Var(I_A) = p(1-p)
+   \] 
+\end{framed}
+
+\begin{framed}
+   \textbf{Definition} Suppose $n$ independent Bernoulli trials are performed, each with the same success probability $p$, let $X$ be the number of successes. The distribution of $X$ is called the Binomial distribution with parameters $n$ and $p$
+   \[
+     X \sim Bin(n, p)
+   \] 
+
+   \textbf{Theorem}: If $X \sim Bin(n, p)$, then the  $PMF$ of $X$ is
+   \[
+      P(X = k) = \begin{pmatrix} n \\ k \end{pmatrix}  p^k (1-p)^{n-k} \text{ for $k = 0, 1, \hdots n$}
+   \] 
+
+   \textbf{Expectation}
+   \[
+      E[X] = np
+   \] 
+   \textbf{Variance}
+   \[
+      Var(X) = np(1-p)
+   \] 
+
+   This is a valid PMF because \\
+   \begin{itemize}
+      \item non-negative
+         \[
+            P(X = k) = \begin{pmatrix} n \\ k \end{pmatrix} p^k (1-p)^{n-k} \geq 0
+         \] 
+      \item sums to 1
+         \begin{align*}
+            \sum_{k = 0}^{n} P(X = k) &= \sum_{k = 0}^{n} \begin{pmatrix} n \\ k \end{pmatrix}  p^k (1-p)^{n-k} \\
+                                      &= [p + (1-p)]^n \textbf{ By Binomial Theorem}\\
+                                      &= 1^n  \\
+                                      &= 1
+         \end{align*}
+   \end{itemize}
+\end{framed}
+
+\section{Cumulative Distribution Functions}
+
+\begin{framed}
+   \textbf{Definition}: The CDF of a r.v. $X$ is 
+   \[
+     F_X (u)  = P(X \leq u)
+   \] 
+
+   Any CDF satisfies the following properties
+   \begin{itemize}
+      \item increasing
+         \[
+           u_1 \leq u_2 \implies F(u_1 ) \leq F(u_2)
+         \] 
+      \item Right continuous
+      \item Converges to $0$ and $1$ in the limits
+         \[
+            \lim_{u \to -\infty} F(u) = 0
+         \] 
+         \[
+            \lim_{u \to \infty} F(u) = 1
+         \] 
+   \end{itemize}
+
+   CDF can be calculated from the PMF
+   \[
+     P(X \leq 2.5) = P(X = 0) + P(X = 1) + P(X = 2) 
+   \] 
+
+   PMF can be calculated by taking the difference of the CDF>
+\end{framed}
+

@@ -1,0 +1,43 @@
+\chapter{Chapter 9}
+
+\section{Hypergeometric Distribution}
+
+\begin{framed}
+
+   Drawing from a bag of $w$ white balls and $b$ black balls yields a Hypergeometric distribution with parameters $w, b, n$ for the total number of white balls
+   \[
+     HGeom(w, b, n)
+   \] 
+
+   \textbf{Theorem}: The support of HGeom distribution is all integer $k$ such that
+   \begin{align*}
+      0 \leq k & \leq w \\
+      0 \leq n-k & \leq b \\
+   \end{align*}
+
+   \textbf{Theorem}: The PMF of $X \sim HGeom(w, b, n)$ is
+    \[
+     P(X = k) = \frac{ \begin{pmatrix} w \\ k  \end{pmatrix} \begin{pmatrix}  b \\ n-k \end{pmatrix} }{ \begin{pmatrix}  w + b \\ n \end{pmatrix} }
+   \] 
+
+   The expected value is 
+   \[
+      E[X] = E \left[ \sum_{i = 1}^{n} X_i\right] = \sum_{i = 1}^{n} E[X_i] = \sum_{i = i}^{n} \frac{w}{w + b} = \frac{nw}{ w + b}
+   \] 
+
+
+   \textbf{Note}: let the support be $K$,
+   \begin{align*}
+      \sum_{k \in K} P(X = k)  & = 1\\
+      \sum_{k \in K} \frac{ \begin{pmatrix}  w \\ k \end{pmatrix}  \begin{pmatrix}  b \\ n-k \end{pmatrix} }{ \begin{pmatrix}  w + b \\ n \end{pmatrix} } &= 1\\
+      \sum_{k} \begin{pmatrix}  w \\ k \end{pmatrix}  \begin{pmatrix}  b \\ n - k  \end{pmatrix}  &= \begin{pmatrix}  w + b \\ n \end{pmatrix} 
+   \end{align*}
+\end{framed}
+
+
+
+
+
+
+
+

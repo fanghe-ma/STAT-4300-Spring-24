@@ -1,0 +1,124 @@
+\chapter{Class 15}
+
+\section{Gaussian distribution}
+
+\subsection{Standard Gaussian distribution}
+\begin{framed}
+   \textbf{Definition}: The Gaussian distribution with mean $0$ and variance $1$, denoted
+   \[
+     Z \sim N(0, 1)
+   \] 
+
+   has PDF
+   \[
+      \varphi(z) = \frac{1}{\sqrt{2\pi}}e^{ - \frac{z^2}{2}} \text{ for } \infty < z < \infty
+   \] 
+
+   and CDF:
+   \[
+      \Phi (z) = \int_{-\infty}^{z}  \varphi(t) dt = \int_{-\infty}^{z}    \frac{1}{\sqrt{2\pi}} e^{- \frac{t^2}{2}} dt
+   \] 
+
+   \textbf{Expectation}
+   \[
+     E\left[ Z\right]  = 0
+   \] 
+
+   \textbf{Variance}
+   \[
+     Var(Z) = 1
+   \] 
+
+   \textbf{Properties}
+   \begin{itemize}
+      \item Symmetrical PDF
+         \[
+           \varphi(z) = \varphi(-z)
+        \]
+      \item Symmetric tail probabilities
+         \[
+           \Phi(z) = 1 - Phi(-z)
+         \]
+      \item Symmetric r.v.
+         \[
+           Z \sim N(0, 1) \implies -Z \sim N(0, 1)
+         \] 
+   \end{itemize}
+\end{framed}
+
+\subsection{General Gaussian distribution}
+\begin{framed}
+   \textbf{Definition}: if $Z \sim N(0, 1)$, then $X = \mu + \sigma Z $ has the Gaussian distribution with mean $\mu$ and variance $\sigma^2$,
+    \[
+     \mu + \sigma Z \sim N(\mu, \sigma^2)
+   \] 
+
+   \textbf{Standardization}: the standardized version, or $Z$ score, of $X = \mu + \sigma Z$ is
+   \[
+     Z = \frac{X - \mu}{\sigma} \sim N(0, 1)
+   \] 
+
+   The PDF is
+   \[
+      f(x) = \varphi( \frac{x - \mu}{ \sigma}) \frac{1}{\sigma} = \frac{1}{\sigma \sqrt{2 \pi }} e^{ - \frac{(x - \mu)^2}{2 \sigma^2}}
+   \] 
+
+   The CDF is
+   \[
+     F(x) = \Phi \left(  \frac{x - \mu}{\sigma} \right) 
+   \] 
+\end{framed}
+
+\subsection{Empirical rule}
+
+For $Z = \frac{X - \mu}{\sigma} \sim N(0, 1)$
+\begin{itemize}
+   \item $P( -1 < Z < 1) \approx 0.68$
+   \item $P( -2 < Z < 2) \approx 0.95$
+   \item $P( -3 < Z < 3) \approx 0.997$
+\end{itemize}
+
+\section{Exponential Distribution}
+
+\begin{framed}
+   \textbf{Definition}: Exponential distribution with parameter $\lambda$ 
+   \[
+     X \sim Expo(\lambda)
+   \] 
+
+   has PDF
+   \[
+      f(x) = \lambda e^{ - \lambda x} \text{ for } x > 0
+   \] 
+
+   and CDF
+   \[
+     F(x) = \int_{0}^{x}  f(t) dt 
+   \] 
+
+   \textbf{Scaling transform}: if $X \sim Expo(1) $ and $Y = \frac{X }{\lambda}$ then
+   \[
+     Y \sim Expo(\lambda)
+   \] 
+
+   \textbf{Expectation and variance} of standard exponential
+   \[
+      E[X] = 1 
+   \] 
+   \[
+     Var(X) = 1
+   \] 
+   \textbf{Expectation and variance} of general exponential
+   \[
+      E[Y] = E\left[ \frac{X}{ \lambda}\right]  = \frac{1}{\lambda}
+   \] 
+   \[
+     Var(Y) = Var \left( \frac{X}{ \lambda} \right)  = \frac{1}{\lambda^2} Var(X) = \frac{1}{\lambda^2}
+   \] 
+
+   \textbf{Memorylessness}
+   \[
+     P(X \geq s + t | X \geq s) = P(X \geq t) \text{ for all } s, t \geq 0
+   \] 
+\end{framed}
+

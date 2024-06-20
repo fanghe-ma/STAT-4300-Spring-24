@@ -1,0 +1,72 @@
+\chapter{Conditional Expectation}
+
+\section{Definition of $E\left[ Y |X = x \right] $}
+\begin{framed}
+   \textbf{Definition} Conditional given event
+   \begin{itemize}
+      \item discrete $Y$ 
+         \[
+            E[Y |A ] = \sum_{y} y P(Y = y |A)
+         \] 
+      \item continuous $Y$ 
+         \[
+            E[Y |A ] = \int_{\infty}^{\infty} yf_Y(y | A) dy  
+         \] 
+   \end{itemize}
+
+   \textbf{Definition} Conditional given the value of a random variable $X$
+   \begin{itemize}
+      \item If $X$ is discrete
+         \[
+            E[Y |X = x ] = E[Y |A] \text{ where $A$ is the event that $X = x$}
+         \] 
+      \item if $X, Y$ continuous
+         \[
+            E[Y |X = x ] = \int_{\infty}^{\infty} yf_{Y|X}(y | x) dy  
+         \] 
+      \item if $X$ continuous, $Y$ discrete
+         \[
+            E[Y |X = x ] = \sum_{y } y P(Y = y | X = x) 
+         \] 
+   \end{itemize}
+\end{framed}
+
+\section{Definition of $E\left[ Y | X\right] $}
+\begin{framed}
+
+   The \textbf{conditional expectation} of $Y$, given $X$ is the r.v. $g(X)$
+    \[
+       E[Y | X] = g(X)
+   \] 
+
+   such that for each $x$ in the support of  $X$, $g(X)$ takes the value of 
+   \[
+     E\left[ Y | X = x\right] 
+   \] 
+\end{framed}
+
+
+\section{Properties of conditional expectation}
+\begin{framed}
+   Ignoring what's independent
+   \[
+      X \perp Y \rightarrow E[Y |X] = E[Y]
+   \] 
+
+   Taking out what's known: 
+   \[
+      E[h(X) Y |X] = h(X) \cdot E[Y |X]
+   \] 
+
+   Linearity
+   \[
+      E[Y_1 + Y_2 | X] = E[Y_1 | X] + E[Y_2 | X]
+   \] 
+
+   Law of Iterated Expectation / Law of Total Expectations / Adam's Law / Tower Law 
+   \[
+      E[Y] = E\left[[Y  |X] \right]
+   \] 
+\end{framed}
+
+
